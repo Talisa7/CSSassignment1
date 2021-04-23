@@ -1,0 +1,120 @@
+*
+body{
+    background-color: hsl(257, 40%, 49%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: ivory;
+    margin: 0 3em 0 3em;
+    
+}
+
+.grid{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header header header"
+    "aside main main"
+    "aside section section"
+    "footer footer footer";
+}
+header {
+    grid-area: header;
+    justify-self: start;
+    display: flex;
+
+}
+main{
+    grid-area: main;
+    justify-self: end;
+    align-self: end;
+    padding-left: 40px;
+    padding-right: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+section{
+    grid-area: section;
+    align-self: start;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+aside {
+    grid-area: aside;
+    display: flex;
+    padding-top: 30px;
+}
+.img {
+    max-width: 100%;
+}
+footer {
+    grid-area: footer;
+    justify-self: end;
+    padding-right: 40px;
+}
+.button:hover {
+    background-color: hsl(300, 69%, 71%);
+    box-shadow: 0 20px 40px -10px hsl(217, 6%, 35%);
+}
+.button {
+    border-radius: 50%;
+    border: 2px solid white;
+    background: transparent;
+}
+.button-1:hover {
+    background-color: hsl(300, 69%, 71%);
+}
+.button-1 {
+    color: hsl(257, 40%, 49%);
+    border: none;
+    border-radius: 20px;
+    background-color: ivory;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.4);
+    font-size: 16px;
+    text-align: center;
+    max-width: 25%;
+    padding: 12px 36px;
+}
+i {
+    padding: 10px;
+    color: white;
+    max-height: 15px;
+    max-width: 15px;
+    border-radius: 50%;
+}
+button:hover i {
+    background: transparent;
+    border-color: hsl(300, 69%, 71%);
+}
+@media only screen and (max-width: 500px) {
+    body {
+        background-image: url( bg-mobile.svg);
+        background-repeat: no-repeat;
+    }
+    .grid {
+        grid-template-areas: 
+        "header"
+        "aside"
+        "main"
+        "section"
+        "footer";
+        align-items: center;
+       }
+    img {
+        width: 100%;
+    }
+    .button-1 {
+        text-align: center;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1440px) {
+   body{
+       background-image: url(bg-desktop.svg);
+   }
+}
